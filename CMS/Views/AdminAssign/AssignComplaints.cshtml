@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "AssignComplaints";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Assign Complaint</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h4 class="text-primary">Unassigned Complaints</h4>
+
+        <!-- Filters -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="ddlClient" class="form-label">Filter by Client</label>
+                <select id="ddlClient" class="form-select">
+                    <option value="">-- All Clients --</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="ddlCategory" class="form-label">Filter by Category</label>
+                <select id="ddlCategory" class="form-select">
+                    <option value="">-- All Categories --</option>
+                    <option value="Hardware">Hardware</option>
+                    <option value="Software">Software</option>
+                    <option value="Network">Network</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="col-md-4 d-flex align-items-end">
+                <button id="btnFilter" class="btn btn-primary w-100">Apply Filter</button>
+            </div>
+        </div>
+
+        <!-- Complaints Grid -->
+        <div class="table-responsive mt-3">
+            <table id="tblAdminComplaints" class="table table-bordered table-striped align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Priority</th>
+                        <th>Description</th>
+                        <th>Client</th>
+                        <th>Attachment</th>
+                        <th>Date</th>
+                        <th>Assign To</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="9" class="text-center">Loading...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
